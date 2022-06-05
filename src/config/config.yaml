@@ -1,0 +1,23 @@
+data:
+  root_path: "/Users/nurimateos/PycharmProjects/forecasting/" # Project path
+  data_path: "data/"   # Path where the data is located
+  type_data: "excel" # Options: excel, csv
+  filename: "filename1.xlsx" # name of the file to made de EDA
+  filenames: ['filename1.xlsx', 'filename2.xlsx'],  # names of data to be considered
+
+report:
+  title: Forecasting Project
+
+automatic_eda:
+  use_automatic: True   # The EDA is made using python libraries. Returns interactive reports in html format
+  use_pdprofile: True  # Use pandas profiling (https://github.com/ydataai/pandas-profiling)
+  use_sweetviz: False   # Use sweetviz (https://github.com/fbdesignpro/sweetviz)
+  target_colname: "Daily Sales"   # Name of the column corresponding to the target or variable to predict
+
+manual_eda:
+  use_manual: False     # # The EDA is made using a custom code.
+  trigger_nulls: 80     # Value of type float that corresponds to the trigger value for displaying the % of total nulls in a column.
+  remove_nulls: True    # Remove nulls when the percentage is upper trigger_nulls
+  trigger_correlation: 0.6   # Value of type float that corresponds to the trigger value for displaying the correlation.
+  correlation_method: "pearson"   # Method of correlation, options: pearson, kendall, spearman
+  trigger_unbalanced: 60    # Minimum percentage value to consider a binary class as unbalanced
