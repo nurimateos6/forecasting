@@ -3,13 +3,13 @@ data:
   data_path: "data/"   # Path where the data is located
   type_data: "excel" # Options: excel, csv
   filename: "filename1.xlsx" # name of the file to made de EDA
-  filenames: ['filename1.xlsx', 'filename2.xlsx'],  # names of data to be considered
+  filenames: ['filename1.xlsx', 'filename2.xlsx']  # names of data to be considered
 
 report:
   title: Forecasting Project
 
 automatic_eda:
-  use_automatic: True   # The EDA is made using python libraries. Returns interactive reports in html format
+  use_automatic: False   # The EDA is made using python libraries. Returns interactive reports in html format
   use_pdprofile: True  # Use pandas profiling (https://github.com/ydataai/pandas-profiling)
   use_sweetviz: False   # Use sweetviz (https://github.com/fbdesignpro/sweetviz)
   target_colname: "Daily Sales"   # Name of the column corresponding to the target or variable to predict
@@ -21,3 +21,7 @@ manual_eda:
   trigger_correlation: 0.6   # Value of type float that corresponds to the trigger value for displaying the correlation.
   correlation_method: "pearson"   # Method of correlation, options: pearson, kendall, spearman
   trigger_unbalanced: 60    # Minimum percentage value to consider a binary class as unbalanced
+
+data_pickle:
+  pathfile: "/Users/nurimateos/PycharmProjects/forecasting/data/"
+  filename: "data.pickle"

@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-from config.config import load_config
+from src.config.config import load_config
 import pickle
 
 
@@ -44,6 +44,16 @@ def missing_var(data: pd.DataFrame, col: str):
     null_perc_notnull = 100 - null_perc_null
     null_perc = pd.DataFrame(index=['% Null', '% Not Null'], data=[null_perc_null, null_perc_notnull], columns=[col]).T
     return null_perc
+
+
+# Variables conversion
+def col_to_datetime(data: pd.DataFrame, col: str):
+    return data[col].apply(pd.to_datetime, infer_datetime_format=True)
+
+def datetimecol_split(data: pd.DataFrame, col: str):
+    years = pd.DatetimeIndex(data[col]).year
+    months = pd.DatetimeIndex(data[col]).month
+    days = pd.DatetimeIndex(data[col]).day
 
 
 # RELATIONSHIP WITH THE TARGET

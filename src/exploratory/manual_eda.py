@@ -1,8 +1,8 @@
 import pandas as pd
-from config.config import load_config
+from src.config.config import load_config
 import seaborn as sns
 import matplotlib.pyplot as plt
-import utils as ut
+import src.utils as ut
 
 
 class ManualEDA:

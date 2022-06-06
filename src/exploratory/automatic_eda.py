@@ -2,7 +2,7 @@ import pandas as pd
 from pandas_profiling import ProfileReport
 import sweetviz as sv
 from pathlib import Path
-from config.config import load_config
+from src.config.config import load_config
 
 
 class AutomaticEDA:
